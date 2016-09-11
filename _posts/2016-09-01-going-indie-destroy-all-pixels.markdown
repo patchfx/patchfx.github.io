@@ -29,7 +29,7 @@ felt for quite some time, the need to create my own games.
 # About the game
 
 I have spent the last few months gradually working through my backlog and
-handing off other responsbilities to people around me, in order to free up more
+handing off other responsibilities to people around me, in order to free up more
 time to do games. I'm aiming for 1 day a week full time with some evenings and
 weekends thrown in. This intentionally limits the scope of my first project
 which I definitely think is a good thing. I've seen way to many games get
@@ -38,10 +38,10 @@ avoid.
 
 I've had a game idea brewing in my mind for over year, which I've recently
 started to prototype over the last few months. The game is a medieval blacksmith
-management sim. You receive orders, fulfill them, manage employess as well as
+management sim. You receive orders, fulfill them, manage employees as well as
 resources.
 
-![Prototype Screenshot]({{ site.url }}/assets/destroy_all_pixels_prototype.png)
+<img class="img-responsive" src="/assets/destroy_all_pixels_prototype.png" alt="">
 
 Currently I have just completed my first milestone, a fairly simple game engine
 with asset loading, update loop and rendering pipeline. You can receive, accept,
