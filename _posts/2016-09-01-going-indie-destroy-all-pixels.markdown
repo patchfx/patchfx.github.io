@@ -2,7 +2,6 @@
 layout: post
 title:  "Going Indie - Destroy All Pixels"
 date:   2016-09-01 09:00:00 +0100
-categories: game indiedev
 ---
 The summer is drawing to a close and I'm ready to announce the game I have been
 working on for the last few months. For those that know me well, I've been
