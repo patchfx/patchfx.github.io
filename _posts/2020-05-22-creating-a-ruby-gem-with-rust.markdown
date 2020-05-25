@@ -1,8 +1,12 @@
 ---
 layout: post
 title:  "Creating a Ruby Gem with Rust"
+description: "How to create a Rust library and access it via a Rubygem"
 date:   2020-05-22 09:00:00 +0100
 ---
+In this post you will learn how to create a Rust library and access 
+it with a Rubygem.
+
 I'm a big fan of the Ruby programming language, it's been a one of 
 my primary programming languages for the last 12 years. It's an
 extremely expressive language that really lends itself to writing
