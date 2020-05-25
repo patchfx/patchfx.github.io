@@ -3,9 +3,26 @@ layout: post
 title:  "Creating a Ruby Gem with Rust"
 date:   2020-05-22 09:00:00 +0100
 ---
+I'm a big fan of the Ruby programming language, it's been a one of
+my primary programming languages for the last 12 years. It's an
+extremely expressive language that really lends itself to writing
+elegant and easy to read code. One drawback however, is it's
+performance. In fact it's probably the biggest criticism of the 
+language that I hear. If you are writing code where performance is
+critical, then Ruby might not be the right tool for the job.
+This doesn't necessarily mean you have to switch technologies
+entirely, or create another microservice, you can in fact write
+a native library and interface it with Ruby.
 
-In this tutorial we will create a very simple Rust crate that will
-print `Hello World from Rust!`.
+A language that I have grown to love over the last few years is
+[Rust](https://rust-lang.org). It's a systems programming language
+that's focused on performance and memory safety, without the
+garbage collection. Ideal for creating librarys and tools where
+performance is important.
+
+In this tutorial we will create a very simple Rust library that will
+print `Hello World from Rust!`. We will wrap this in a Rubygem and
+have a Ruby interface to the Rust code.
 
 # Create a new gem with bundler
 
@@ -42,7 +59,7 @@ dynamic system library and we will be using it from another language.
 crate-type=["cdylib"]
 ```
 
-The `Cargo.toml` file should now look similar to the following.
+The `Cargo.toml` file should now look like the following.
 
 ```
 [package]
@@ -52,7 +69,7 @@ authors = ["Your Name <example@test.com>"]
 edition = "2018"
 
 [lib]
-crate-type="cdylib"
+crate-type=["cdylib"]
 
 [dependencies]
 ```
@@ -73,7 +90,7 @@ pub extern fn hello_world() {
 ```
 
 The above function, is public (`pub`) and accessible externally (`extern`).
-It has no return type, but simply useis `println!` to write a string to our
+It has no return type, but simply uses `println!` to write a string to our
 output.
 
 # Let's build the Rust library
@@ -84,7 +101,7 @@ file accessible to our Ruby gem.
 ```
 task :rust_build do
   `cargo rustc --release`
-  `mv -f ./target/release/libhelloworld.so ./lib/helloworld.so`
+  `mv -f ./target/release/libhelloworld.so ./lib/helloworld/helloworld.so`
 end
 
 task :build => :rust_build
@@ -122,8 +139,8 @@ require 'ffi'
 
 module Helloworld
   class FFI
-    extend FFI::Library
-    lib_name = "libhelloworld.#{::FFI::Platform::LIBSUFFIX}"
+    extend ::FFI::Library
+    lib_name = "helloworld.#{::FFI::Platform::LIBSUFFIX}"
     ffi_lib File.expand_path(lib_name, __dir__)
     attach_function :hello_world, [], :void
   end
