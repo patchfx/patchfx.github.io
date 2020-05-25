@@ -3,7 +3,7 @@ layout: post
 title:  "Creating a Ruby Gem with Rust"
 date:   2020-05-22 09:00:00 +0100
 ---
-I'm a big fan of the Ruby programming language, it's been a one of
+I'm a big fan of the Ruby programming language, it's been a one of 
 my primary programming languages for the last 12 years. It's an
 extremely expressive language that really lends itself to writing
 elegant and easy to read code. One drawback however, is it's

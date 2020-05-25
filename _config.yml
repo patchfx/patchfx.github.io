@@ -7,6 +7,8 @@
 
 # Site settings
 title: Richard Patching
+tagline: Personal website and blog
+description: The personal website and blog by Richard Patching.
 email: richard@justaddpixels.com
 description: > # this means to ignore newlines until "baseurl:"
   a blog by Richard Patching.
@@ -16,8 +18,20 @@ twitter_username: patching_irl
 github_username:  patchfx
 disqus_shortname: richard-patching
 
+twitter:
+  username: patching_irl
+  card: summary
+
+social:
+  name: Richard Patching
+  links:
+    - https://twitter.com/patching_irl
+    - https://github.com/patchfx
+    - https://instagram.com/richardpatching
+
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Build settings
 markdown: kramdown
