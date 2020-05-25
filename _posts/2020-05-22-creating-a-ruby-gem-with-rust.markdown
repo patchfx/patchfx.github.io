@@ -3,9 +3,13 @@ layout: post
 title:  "Creating a Ruby Gem with Rust"
 date:   2020-05-22 09:00:00 +0100
 ---
+
+In this tutorial we will create a very simple Rust crate that will
+print `Hello World from Rust!`.
+
 # Create a new gem with bundler
 
-Lets go ahead a create a new Ruby gem template using bundler.
+Lets go ahead and create a new Ruby gem template using bundler.
 
 ```
 bundle gem helloworld

@@ -11,10 +11,13 @@ email: richard@justaddpixels.com
 description: > # this means to ignore newlines until "baseurl:"
   a blog by Richard Patching.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://patchfx.github.com" # the base hostname & protocol for your site
+url: "https://richardpatching.com" # the base hostname & protocol for your site
 twitter_username: patching_irl
 github_username:  patchfx
 disqus_shortname: richard-patching
+
+plugins:
+  - jekyll-sitemap
 
 # Build settings
 markdown: kramdown
