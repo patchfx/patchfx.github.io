@@ -16,7 +16,7 @@
         {% for page in site.pages %}
         {% if page.title %}
         <li>
-          <a href="{{ my_page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         </li>
         {% endif %}
         {% endfor %}
@@ -29,11 +29,11 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+<header class="intro-header" style="background-image: url('/img/background.jpg')">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="site-heading">
+        <div class="site-heading" style="background-color: rgba(0,0,0,0.3);">
           {% if page.layout == 'post' %}
             <h1>{{ page.title }}</h1>
             <hr class="small">

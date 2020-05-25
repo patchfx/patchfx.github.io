@@ -6,7 +6,17 @@
 
   <meta name="author" content="Richard Patching">
 
-  <title>{{ site.title }}</title>
+  <title>
+    {% if page.layout == 'post' %}
+      {{ page.title }}
+    {% else %}
+      {% if page.title != nil %}
+        {{ site.title }} | {{ page.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    {% endif %}
+  </title>
 
   <!-- Bootstrap Core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
