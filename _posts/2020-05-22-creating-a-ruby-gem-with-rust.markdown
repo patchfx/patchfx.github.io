@@ -12,7 +12,8 @@ bundle gem helloworld
 cd helloworld
 ```
 
-MAYBE EDIT GEMSPEC?
+NOTE: There are a few fields in the created `helloworld.gemspec` with `TODO` tags.
+You will need to edit those first before the gem can build.
 
 # Create a new Rust library with Cargo
 
