@@ -191,3 +191,5 @@ from which to explore Rust and Ruby further. There are many instances where
 you might need extra performance, that you just don't get from Ruby and Rust
 is an extremely good candidate for that.
 
+You can view the full source code on [GitHub](https://github.com/patchfx/helloworld)
+
