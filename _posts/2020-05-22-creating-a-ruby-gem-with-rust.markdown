@@ -21,7 +21,7 @@ a native library and interface it with Ruby.
 A language that I have grown to love over the last few years is
 [Rust](https://rust-lang.org). It's a systems programming language
 that's focused on performance and memory safety, without the
-garbage collection. Ideal for creating librarys and tools where
+garbage collection. Ideal for creating libraries and tools where
 performance is important.
 
 In this tutorial we will create a very simple Rust library that will
