@@ -5,7 +5,7 @@ description: "How to save and load game data in Godot"
 date:   2020-05-29 09:00:00 +0100
 ---
 
-In this tutorial we will create simple save and load 
+In this tutorial, we will create simple save and load 
 functionality for our [Godot](https://godotengine.org) game.
 
 Implementing this feature early on in the game development
@@ -15,11 +15,11 @@ and managed in your game. All good things to be thinking
 about.
 
 I'll be using Godot 3.2.1 for this tutorial and writing
-the code in GDScript. We aren't really using any features
+the code in GDScript. We aren't using any features
 in the engine that are likely to change, so if you're on
-a earlier or later version the code should still work.
-In fact, I've been using the same code in my games
-since version 2, without any changes.
+an earlier or later version the code should still work.
+I've been using the same code in my games since version
+2, without any changes.
 
 We will be structuring our game data using a GDScript
 dictionary and serializing it to JSON. We will then read
@@ -33,18 +33,18 @@ Fire up Godot and create a new project.
 alt="New Godot Project" />
 
 The first thing is to create a 'Root Node', for this we will select
-`Other Node`, click `Node` and and call it `Main`.
+`Other Node`, click `Node` and call it `Main`.
 
 <img class="img-responsive" src="/img/godot/save_and_load/create_main_node.png"
 alt="Add Main Node" />
 
-In order to make our game data accessible, we will need to
+To make our game data accessible, we will need to
 create a script that is autoloaded on startup, I tend to name
 this `global.gd`.
 
 Create a folder in the resources tab called `Scripts` and then
 create a new Godot script file in that folder by right-clicking
-and selecting `New Script...`.
+and selecting `New Script...`
 
 <img class="img-responsive" src="/img/godot/save_and_load/new_script_global.png"
 alt="Create Singleton Godot Script" />
@@ -53,7 +53,7 @@ alt="Create Singleton Godot Script" />
 
 Open the `global.gd` script and add some dummy game data. This will
 be a [Dictionary](https://docs.godotengine.org/en/stable/classes/class_dictionary.html)
-type, and holds key/value pairs.
+type and holds key/value pairs.
 
 ```
 extends Node
@@ -68,9 +68,9 @@ var game_data = {
 ```
 
 We create a simple player key, which will hold our player data, in this
-case a name and a number of coins.
+case, a name and a number of coins.
 
-Next we will need to make this file autoload so that it can be accessed
+Next, we will need to make this file autoload so that it can be accessed
 anywhere from within our game. Click `Project -> Project Settings` and
 select the `AutoLoad` tab. Click the folder icon next to `Path` and select
 the `global.gd` file from our scripts folder.
@@ -104,14 +104,14 @@ func save_game():
 		file.close()
 ```
 
-In this function we create a new `File` object, assign a location to
+In this function, we create a new `File` object, assign a location to
 save the file. We then check if we can write to the location that we
 assigned, printing out an error if not. If the location is writeable
 we serialize our `game_data` into JSON and write it to the file using
-the `store_line` method. Finally we close the file.
+the `store_line` method. Finally, we close the file.
 
 The location of the `user://` path differs depending on the platform.
-For Windows this usually exists within `APPDATA` and for Linux/Mac it
+For Windows, this usually exists within `APPDATA` and for Linux/Mac it
 is `~/.PROJECT_NAME`. I added a `print` statement so that the location
 is outputted to the console on save.
 
@@ -120,7 +120,7 @@ is outputted to the console on save.
 The load function will open our save game file and populate the data
 back into a GDScript Dictionary object.
 
-Lets create a new function called `load_save_file`.
+Let's create a new function called `load_save_file`.
 
 ```
 func load_save_file():
@@ -132,19 +132,19 @@ func load_save_file():
 ```
 
 We again create a new `File` object and open the save game file from
-it's location. We read the text from the file and parse the json,
-storing it back in our game_data dictionary. Finally we close the file.
+its location. We read the text from the file and parse the JSON,
+storing it back in our game_data dictionary. Finally, we close the file.
 
 <img class="img-responsive" src="/img/godot/save_and_load/save_load_script.png"
 alt="Save and Load game script for Godot" />
 
 # Rendering our game data
 
-Lets visualise this a little more, by adding a couple of labels and buttons.
+Let's visualise this a little more, by adding a couple of labels and buttons.
 Add two labels to the `Main` scene and name them `PlayerName` and `PlayerCoins`.
 You can add some dummy text, we will be setting this when the game loads.
 
-Add a script to the `Main` root node we created earlier. Lets change
+Add a script to the `Main` root node we created earlier. Let's change
 the `_process` function, so that it sets the player name and coin labels.
 This function is called every frame, so when we later modify our save game
 and load it back in, we will see the labels update.
@@ -159,7 +159,7 @@ You will notice that we set the label text with our game data, that is
 accessible through the singleton node `Global` that we created.
 
 The `str` function is casting our coins variable to a string so that it
-can be appended to the `Coins:` string. Without it you will get a type
+can be appended to the `Coins:` string. Without it, you will get a type
 error. We could have stored our coins as a string, but I think it's
 good practice to be strict with your types.
 
@@ -203,7 +203,7 @@ OpenGL ES 3.0 Renderer: GeForce GTX 1060 6GB/PCIe/SSE2
 Saving game to: /home/richard/.local/share/godot/app_userdata/SaveAndLoadGame
 ```
 
-Whilst the game is still running, open up the save game file from it's
+Whilst the game is still running, open up the save game file from the
 location that was printed out. Edit the coins value and save, then go back
 to the game and click `Load Game`. You should see the coins value automatically
 update!
