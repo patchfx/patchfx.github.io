@@ -2,6 +2,7 @@
 layout: post
 title:  "Save and load game data in Godot"
 description: "How to save and load game data in Godot"
+tags: godot gamedev
 date:   2020-05-29 09:00:00 +0100
 ---
 

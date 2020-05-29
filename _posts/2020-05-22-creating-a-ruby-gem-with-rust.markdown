@@ -2,6 +2,7 @@
 layout: post
 title:  "Creating a Ruby Gem with Rust"
 description: "How to create a Rust library and access it via a Rubygem"
+tags: ruby rust
 date:   2020-05-22 09:00:00 +0100
 ---
 In this post you will learn how to create a Rust library and access 
